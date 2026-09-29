@@ -35,3 +35,5 @@ Target is Vercel free tier (vercel.json holds headers). The public origin comes 
 
 ## Prerendering
 npm run build renders App to static HTML (src/entry-server.jsx + scripts/prerender.mjs) and main.jsx hydrates it. Entrance-animation "start hidden" styles must be scoped under html.js, which App adds in its effect, so prerendered HTML is fully visible before JavaScript runs. Keep App free of browser globals outside effects and handlers.
+
+Fonts are self-hosted in public/fonts (Barlow Condensed 700/800/900, DM Sans 400-700) with @font-face at the top of style.css and preloads in index.html; do not reintroduce the Google Fonts stylesheet. The hero image ships 640/900/1122 WebP variants via srcset.
