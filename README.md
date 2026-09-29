@@ -31,7 +31,7 @@ See AGENTS.md. Short version: no invented clients, testimonials, metrics, prices
 
 ## Structure
 
-- src/main.jsx: page sections, nav, footer, scroll reveal observer
+- src/App.jsx: page sections, nav, footer, scroll reveal observer; src/main.jsx hydrates the prerendered HTML; src/entry-server.jsx and scripts/prerender.mjs produce it at build time
 - src/HeroCollage.jsx: hero characters and labels
 - src/ContactPrompt.jsx: yellow contact block with the rotating word
 - src/ContactSheet.jsx and src/JoinSheet.jsx: popup cards

@@ -20,12 +20,12 @@
 
 
 /* collage motion */
-.creative-community{transform-origin:50% 100%;transform:translateY(30px) scale(.94);opacity:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .6s}
-.in .creative-community{transform:translate(calc(var(--px)*-8px),calc(var(--py)*-8px)) scale(1);opacity:1;will-change:transform}
-.collage-tag{opacity:0;transition:opacity .5s,translate .5s cubic-bezier(.2,.7,.2,1);translate:0 14px;will-change:translate}
+.creative-community{transform-origin:50% 100%;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .6s}
+.js .creative-community{transform:translateY(30px) scale(.94);opacity:0}.js .in .creative-community{transform:translate(calc(var(--px)*-8px),calc(var(--py)*-8px)) scale(1);opacity:1;will-change:transform}
+.js .collage-tag{opacity:0;translate:0 14px}.collage-tag{transition:opacity .5s,translate .5s cubic-bezier(.2,.7,.2,1);will-change:translate}
 .in .collage-tag{opacity:1;translate:0 0}
 .in .tag-filmmaker{transition-delay:.5s;translate:calc(var(--px)*-14px) calc(var(--py)*-14px)}.in .tag-creator{transition-delay:.7s;translate:calc(var(--px)*22px) calc(var(--py)*-22px)}.in .tag-business{transition-delay:.9s;translate:calc(var(--px)*18px) calc(var(--py)*18px)}
 .collage-tag:hover{box-shadow:5px 5px 0 var(--ink)}
 .collage-tag svg{transition:transform .25s}.collage-tag:hover svg{transform:translate(2px,-2px)}
-.creative-collage .art-label,.collage-caption{opacity:0;transition:opacity .6s .3s}.in .art-label,.in .collage-caption{opacity:1}
+.creative-collage .art-label,.collage-caption{transition:opacity .6s .3s}.js .creative-collage .art-label,.js .collage-caption{opacity:0}.in .art-label,.in .collage-caption{opacity:1}
 @media(prefers-reduced-motion:reduce){.creative-community,.collage-tag,.creative-collage .art-label,.collage-caption{opacity:1;transform:none;translate:0;animation:none}}

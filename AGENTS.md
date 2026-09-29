@@ -32,3 +32,6 @@ Source PNGs (hero collage, torn newspaper, Instagram reference) live in brand-as
 
 ## Deployment
 Target is Vercel free tier (vercel.json holds headers). The public origin comes from VITE_SITE_URL; vite.config.js injects canonical, og:url, absolute share URLs, sitemap.xml and the robots Sitemap line only when it is set. README.md is the handoff for the team and dev. Keep launch blockers (domain, WhatsApp number, Join endpoint) in the README table.
+
+## Prerendering
+npm run build renders App to static HTML (src/entry-server.jsx + scripts/prerender.mjs) and main.jsx hydrates it. Entrance-animation "start hidden" styles must be scoped under html.js, which App adds in its effect, so prerendered HTML is fully visible before JavaScript runs. Keep App free of browser globals outside effects and handlers.
