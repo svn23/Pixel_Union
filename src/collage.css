@@ -3,7 +3,7 @@
 .creative-collage .art-label{top:0;left:5%;z-index:1}
 .collage-tag{position:absolute;z-index:2;display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:1px;font-weight:700;padding:12px 14px;box-shadow:3px 3px 0 var(--ink);white-space:nowrap}
 .tag-filmmaker{left:-3%;top:60%;background:var(--paper);transform:rotate(-7deg);border:1px solid var(--ink)}
-.tag-creator{right:12%;top:18%;background:var(--red);color:var(--paper);transform:rotate(6deg)}
+.tag-creator{right:12%;top:18%;background:var(--red-deep);color:var(--paper);transform:rotate(6deg)}
 .tag-business{right:-1%;bottom:22%;background:var(--yellow);transform:rotate(5deg);border:1px solid var(--ink)}
 .collage-caption{position:absolute;bottom:14px;font-size:8px;font-weight:700;letter-spacing:2px;border-bottom:1px solid var(--ink);padding-bottom:7px}
 
