@@ -1,0 +1,31 @@
+.creative-collage{isolation:isolate;padding:18px 0 20px;min-width:0;align-self:center;min-height:480px}
+.creative-community{display:block;width:112%;max-width:none;height:auto;margin-left:-4%;object-fit:contain}
+.creative-collage .art-label{top:0;left:5%;z-index:1}
+.collage-tag{position:absolute;z-index:2;display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:1px;font-weight:700;padding:12px 14px;box-shadow:3px 3px 0 var(--ink);white-space:nowrap}
+.tag-filmmaker{left:-3%;top:60%;background:var(--paper);transform:rotate(-7deg);border:1px solid var(--ink)}
+.tag-creator{right:12%;top:18%;background:var(--red);color:var(--paper);transform:rotate(6deg)}
+.tag-business{right:-1%;bottom:22%;background:var(--yellow);transform:rotate(5deg);border:1px solid var(--ink)}
+.collage-caption{position:absolute;bottom:14px;font-size:8px;font-weight:700;letter-spacing:2px;border-bottom:1px solid var(--ink);padding-bottom:7px}
+
+.services{padding-top:45px}
+
+
+
+@media(max-width:1000px){.creative-collage{min-height:395px}.collage-tag{font-size:7px;padding:9px 10px;gap:5px}.tag-filmmaker{left:-2%;top:60%}.tag-creator{right:7%;top:18%}.tag-business{right:-1%;bottom:25%}}
+@media(max-width:700px){.creative-collage{height:auto;min-height:0;padding:23px 0 30px;width:100%;max-width:440px;margin:auto}.creative-community{width:100%;margin:0}.creative-collage .art-label{top:0;left:2%;font-size:8px}.collage-tag{font-size:8px;padding:10px 12px}.tag-filmmaker{left:0;top:60%}.tag-creator{right:5%;top:19%}.tag-business{right:0;bottom:23%}.collage-caption{bottom:9px;font-size:7px}.services{padding-top:35px}}
+@media(max-width:370px){.collage-tag{font-size:6px;padding:8px}.collage-tag svg{width:12px}.creative-collage .art-label{font-size:7px}}
+
+
+.ribbon-wrap{overflow:hidden;padding:25px 0;margin:5px 0}.ribbon-wrap .ribbon{transform:rotate(-1.6deg);width:calc(100% + 40px);margin-left:-20px;padding-left:40px;padding-right:40px}@media(max-width:700px){.ribbon-wrap{padding:15px 0;margin:0}.ribbon-wrap .ribbon{transform:rotate(-2deg)}}
+
+
+/* collage motion */
+.creative-community{transform-origin:50% 100%;transform:translateY(30px) scale(.94);opacity:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .6s}
+.in .creative-community{transform:translate(calc(var(--px)*-8px),calc(var(--py)*-8px)) scale(1);opacity:1;will-change:transform}
+.collage-tag{opacity:0;transition:opacity .5s,translate .5s cubic-bezier(.2,.7,.2,1);translate:0 14px;will-change:translate}
+.in .collage-tag{opacity:1;translate:0 0}
+.in .tag-filmmaker{transition-delay:.5s;translate:calc(var(--px)*-14px) calc(var(--py)*-14px)}.in .tag-creator{transition-delay:.7s;translate:calc(var(--px)*22px) calc(var(--py)*-22px)}.in .tag-business{transition-delay:.9s;translate:calc(var(--px)*18px) calc(var(--py)*18px)}
+.collage-tag:hover{box-shadow:5px 5px 0 var(--ink)}
+.collage-tag svg{transition:transform .25s}.collage-tag:hover svg{transform:translate(2px,-2px)}
+.creative-collage .art-label,.collage-caption{opacity:0;transition:opacity .6s .3s}.in .art-label,.in .collage-caption{opacity:1}
+@media(prefers-reduced-motion:reduce){.creative-community,.collage-tag,.creative-collage .art-label,.collage-caption{opacity:1;transform:none;translate:0;animation:none}}

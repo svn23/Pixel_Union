@@ -1,0 +1,11 @@
+.doodle{position:absolute;pointer-events:none;z-index:0;color:var(--ink);opacity:.09;transform:rotate(var(--r));line-height:0}
+.doodle.over{z-index:3;opacity:1}
+.doodle.over.ink{color:var(--ink)}.doodle.over.red{color:var(--red)}.doodle.over.yellow{color:#c98f00}
+.doodle svg{display:block}
+/* sections become stacking contexts so doodles can sit behind their content */
+.hero,.section,.contact{position:relative}
+.hero>:not(.doodle),.section>:not(.doodle),.contact>:not(.doodle):not(.contact-asterisk){position:relative;z-index:1}
+.hero>.doodle,.section>.doodle,.contact>.doodle{z-index:0}.hero>.doodle.over,.section>.doodle.over,.contact>.doodle.over{z-index:3}
+main{overflow-x:clip}
+@media(max-width:700px){.doodle.desk{display:none}.doodle{opacity:.07}.doodle.over{opacity:1}}
+@media(prefers-reduced-motion:no-preference){.doodle.over{transition:transform .5s}.section:hover .doodle.over{transform:rotate(calc(var(--r) + 6deg))}}

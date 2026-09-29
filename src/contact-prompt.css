@@ -1,0 +1,12 @@
+.conversation-contact .conversation-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .23em;font-size:clamp(64px,9vw,132px);line-height:1.15;margin:28px 0 32px;letter-spacing:-.025em}
+.conversation-title .fixed-prompt{color:var(--ink);white-space:nowrap}
+.conversation-title .word-window{display:block;height:1.15em;overflow:hidden;color:var(--red);min-width:4.1em}
+.word-reel{display:flex;flex-direction:column;animation:contact-words 7.2s cubic-bezier(.65,0,.35,1) infinite;will-change:transform}
+.word-reel>span{display:block;height:1.15em;line-height:1.15;flex-shrink:0;overflow:hidden}
+/* Three 2-second holds, each followed by a 400ms upward slide.
+   The last duplicate matches the first frame for a seamless loop. */
+@keyframes contact-words{0%,27.7778%{transform:translateY(0)}33.3333%,61.1111%{transform:translateY(-1.15em)}66.6667%,94.4444%{transform:translateY(-2.3em)}100%{transform:translateY(-3.45em)}}
+.conversation-contact .talk-button{font-size:19px;min-width:195px;padding:20px 26px}
+@media(max-width:700px){.conversation-contact .conversation-title{font-size:clamp(52px,12.5vw,85px);gap:0 .2em;margin:25px 0}.conversation-contact .talk-button{font-size:17px;padding:17px 22px;min-width:180px}}
+@media(prefers-reduced-motion:reduce){.word-reel{animation:none;transform:none;will-change:auto}}
+
