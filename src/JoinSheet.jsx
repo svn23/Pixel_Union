@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {ArrowUpRight, X, Confetti} from '@phosphor-icons/react';
+import {mailForm} from './ContactSheet.jsx';
 import './contact-sheet.css';
 
 // ponytail: set to a real form endpoint (Formspree, Google Apps Script, your API) to actually receive entries.
-// While empty, the form only shows the success screen and nothing is stored anywhere.
+// While empty, the form opens the visitor's mail app with the details addressed to the Pixel Union inbox.
 export const JOIN_ENDPOINT='';
 export const openJoin=()=>document.dispatchEvent(new Event('open-join'));
 
@@ -19,6 +20,7 @@ export default function JoinSheet(){
     const data=Object.fromEntries(new FormData(e.currentTarget));
     setState('sending');
     if(JOIN_ENDPOINT){try{await fetch(JOIN_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})}catch{}}
+    else mailForm('Join the union: '+data.name,{Name:data.name,'Instagram / phone':data.contact,'Looking for':data.role,City:data.city,Portfolio:data.link,About:data.message});
     setState('done');
     setTimeout(close,2600);
   };
@@ -26,7 +28,7 @@ export default function JoinSheet(){
     <div className="sheet-body">
       <button className="sheet-close" onClick={close} aria-label="Close"><X size={20}/></button>
       {state==='done'
-        ? <div className="join-done"><Confetti size={54} weight="duotone"/><h2>You’re in the loop.</h2><p>Your response was submitted successfully. We’ll reach out if there’s a fit. Keep creating.</p></div>
+        ? <div className="join-done"><Confetti size={54} weight="duotone"/><h2>You’re in the loop.</h2><p>Your response was submitted successfully. Your mail app should have opened with the details, just hit send. We’ll reach out if there’s a fit.</p></div>
         : <form onSubmit={submit}>
           <span className="eyebrow">JOIN THE UNION</span>
           <h2 id="join-title">Work with us.</h2>

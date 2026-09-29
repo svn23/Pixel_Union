@@ -22,7 +22,7 @@ Single-page React + Vite site. Yellow, red, ink and paper editorial style. Conta
 |---|---|---|
 | Public domain | VITE_SITE_URL env var | See above |
 | WhatsApp number | src/ContactSheet.jsx, WHATSAPP_NUMBER | Country code plus digits, no spaces. Until set, the option shows Coming soon and the footer hides the link |
-| Join form destination | src/JoinSheet.jsx, JOIN_ENDPOINT | Until set, submissions are not stored anywhere. Cheapest options: a Formspree endpoint, a Google Apps Script web app, or a Vercel serverless function in api/ that emails via Resend |
+| Form destination (optional) | src/JoinSheet.jsx, JOIN_ENDPOINT | Both forms open the visitor's mail app addressed to pixelunion55@gmail.com. Set an endpoint (Formspree, Google Apps Script, or a Vercel function) for silent submissions instead |
 | Instagram feed | not on the page | Removed by request. Add back only via a server-side Meta API connection, never hardcoded posts |
 
 ## Content rules

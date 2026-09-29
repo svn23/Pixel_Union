@@ -4,10 +4,10 @@ import {ArrowUpRight, ArrowRight, Asterisk, InstagramLogo, List, X, Megaphone, V
 import './style.css';
 import HeroCollage from './HeroCollage.jsx';
 import ContactPrompt from './ContactPrompt.jsx';
-import ContactSheet, {openContact, INSTAGRAM, WHATSAPP} from './ContactSheet.jsx';
+import ContactSheet, {openContact, INSTAGRAM, WHATSAPP, EMAIL, MAILTO} from './ContactSheet.jsx';
 import JoinSheet, {openJoin} from './JoinSheet.jsx';
 import Doodle from './Doodles.jsx';
-import {WhatsappLogo} from '@phosphor-icons/react';
+import {WhatsappLogo, EnvelopeSimple} from '@phosphor-icons/react';
 import {SpeedInsights} from '@vercel/speed-insights/react';
 
 const instagram=INSTAGRAM;
@@ -38,7 +38,7 @@ return()=>{window.removeEventListener('keydown',close);io.disconnect();removeEve
 <section id="faq" className="section faq"><div className="section-top"><span className="eyebrow">05 / GOOD QUESTIONS</span></div><div className="faq-row"><div><h2>Things people<br/><span>usually ask.</span></h2><p className="faq-lead">Still curious? Send a message. Real people reply.</p><button className="text-link" onClick={openContact}>Ask us anything <ArrowUpRight size={17}/></button></div><div className="faq-list">{[["How does a collaboration start?", "You tell us what you’re trying to do, in a DM or a call. We listen, ask a few questions, and come back with an idea of what would work and how we’d get there."], ["I own a shop. What do I need to prepare?", "Honestly, just your shop and your story. We handle the concept, the shoot plan, the creators, and the edit. You bring the thing you’re proud of."], ["I’m a creator. How do I get campaigns?", "Use Join us to tell us your niche, city, and style. When a brand fits your voice, we bring you the brief, the timeline, and the details so you can focus on making."], ["Do you handle shooting and editing?", "Yes. From planning and on-location shoots to editing, sound, subtitles, and covers. If you already have footage, we can work with that too."], ["Do you only work in Odisha?", "Odisha is home and where most of our creators are, but stories travel. If your brand or audience is elsewhere, let’s talk about it."], ["How do you pick creators for a brand?", "By fit first: audience, style, values, and how naturally the product sits in their content. Then we align on brief and creative freedom before anything is made."]].map(([q,a],i)=><details key={q} style={{'--i':i}}><summary>{q}<span className="faq-plus" aria-hidden="true"/></summary><p>{a}</p></details>)}</div></div></section>
 <ContactPrompt/></main>
 <ContactSheet/><JoinSheet/><SpeedInsights/>
-<footer><a className="footer-brand" href="#">pixel union.</a><span>Your social media success, united.<br/>From Odisha, for everywhere.</span><div className="footer-links"><a href={instagram} target="_blank" rel="noreferrer"><InstagramLogo size={19}/> @pixel_union_ <ArrowUpRight size={16}/></a>{WHATSAPP&&<a href={WHATSAPP} target="_blank" rel="noreferrer"><WhatsappLogo size={19}/> WhatsApp <ArrowUpRight size={16}/></a>}<button className="footer-join" onClick={openJoin}>Join us <ArrowUpRight size={16}/></button></div><small>© {new Date().getFullYear()} Pixel Union</small></footer></>}
+<footer><a className="footer-brand" href="#">pixel union.</a><span>Your social media success, united.<br/>From Odisha, for everywhere.</span><div className="footer-links"><a href={instagram} target="_blank" rel="noreferrer"><InstagramLogo size={19}/> @pixel_union_ <ArrowUpRight size={16}/></a><a href={MAILTO}><EnvelopeSimple size={19}/> {EMAIL}</a>{WHATSAPP&&<a href={WHATSAPP} target="_blank" rel="noreferrer"><WhatsappLogo size={19}/> WhatsApp <ArrowUpRight size={16}/></a>}<button className="footer-join" onClick={openJoin}>Join us <ArrowUpRight size={16}/></button></div><small>© {new Date().getFullYear()} Pixel Union</small></footer></>}
 createRoot(document.getElementById('root')).render(<App/>);
 
 
